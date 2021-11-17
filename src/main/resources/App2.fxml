@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -12,30 +13,38 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InventoryManagementController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InventoryManagementController">
    <children>
-      <TabPane prefHeight="425.0" prefWidth="612.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="499.0" prefWidth="677.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="List">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="385.0" prefWidth="612.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="428.0" prefWidth="612.0">
                      <children>
                         <Label layoutX="244.0" layoutY="-4.0" prefHeight="36.0" prefWidth="105.0" text="Inventory" textAlignment="CENTER">
                            <font>
                               <Font size="25.0" />
                            </font>
                         </Label>
-                        <TableView fx:id="InventoryList" layoutY="29.0" prefHeight="301.0" prefWidth="592.0">
+                        <TableView fx:id="InventoryList" layoutY="29.0" prefHeight="301.0" prefWidth="677.0">
                           <columns>
-                            <TableColumn fx:id="SerialNumColumn" prefWidth="200.0" text="Serial Number" />
-                            <TableColumn fx:id="NameColumn" minWidth="0.0" prefWidth="250.0" text="Name" />
-                              <TableColumn fx:id="ValueColumn" minWidth="0.0" prefWidth="141.0" text="Value" />
+                            <TableColumn fx:id="SerialNumColumn" prefWidth="268.0" text="Serial Number" />
+                            <TableColumn fx:id="NameColumn" minWidth="0.0" prefWidth="284.0" text="Name" />
+                              <TableColumn fx:id="ValueColumn" minWidth="0.0" prefWidth="124.0" text="Value" />
                           </columns>
                         </TableView>
-                        <Button fx:id="DeleteItemButton" layoutX="14.0" layoutY="343.0" mnemonicParsing="false" onAction="#deleteItem" text="Delete Item" />
-                        <Button fx:id="ClearInventoryButton" layoutX="108.0" layoutY="343.0" mnemonicParsing="false" onAction="#clearInventory" text="Clear Inventory" />
-                        <Button fx:id="SaveInventoryButton" layoutX="381.0" layoutY="343.0" mnemonicParsing="false" onAction="#saveInventory" text="Save Inventory" />
-                        <Button fx:id="LoadInventoryButton" layoutX="490.0" layoutY="343.0" mnemonicParsing="false" onAction="#loadInventory" text="Load Inventory" />
+                        <Button fx:id="DeleteItemButton" layoutX="389.0" layoutY="340.0" mnemonicParsing="false" onAction="#deleteItem" text="Delete Item" />
+                        <Button fx:id="ClearInventoryButton" layoutX="496.0" layoutY="340.0" mnemonicParsing="false" onAction="#clearInventory" text="Clear Inventory" />
+                        <Button fx:id="SaveInventoryButton" layoutX="389.0" layoutY="381.0" mnemonicParsing="false" onAction="#saveInventory" text="Save Inventory" />
+                        <Button fx:id="LoadInventoryButton" layoutX="497.0" layoutY="381.0" mnemonicParsing="false" onAction="#loadInventory" text="Load Inventory" />
+                        <CheckBox fx:id="SerialNumCheckbox" layoutX="75.0" layoutY="335.0" mnemonicParsing="false" onAction="#sortBySerialNumCheckbox" text="Serial Number" />
+                        <CheckBox fx:id="ValueCheckbox" layoutX="255.0" layoutY="335.0" mnemonicParsing="false" onAction="#sortByValueCheckbox" text="Value" />
+                        <CheckBox fx:id="NameCheckbox" layoutX="189.0" layoutY="335.0" mnemonicParsing="false" onAction="#sortByNameCheckbox" text="Name" />
+                        <Label layoutX="17.0" layoutY="335.0" prefHeight="17.0" prefWidth="46.0" text="Sort By:" />
+                        <TextField fx:id="SearchTextBox" layoutX="22.0" layoutY="369.0" prefHeight="25.0" prefWidth="212.0" promptText="Enter Search" />
+                        <Button fx:id="SerialSearchButton" layoutX="82.0" layoutY="403.0" mnemonicParsing="false" onAction="#searchBySerialNum" text="Serial Number" />
+                        <Button fx:id="NameSearchButton" layoutX="186.0" layoutY="403.0" mnemonicParsing="false" onAction="#searchByName" text="Name" />
+                        <Label layoutX="22.0" layoutY="407.0" prefHeight="17.0" prefWidth="59.0" text="Search By:" />
                      </children>
                   </AnchorPane>
             </content>

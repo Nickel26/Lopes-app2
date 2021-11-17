@@ -1,0 +1,67 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+InventoryManagementApplication <|-- Application
+
+class InventoryManagementApplication{
+    method start()
+    method main()
+}
+
+class InventoryManagementController{
+    Button AddItemButton
+    TextFlow AddItemErrorBox
+    TextField AddNameText
+    TextField AddSerialNumText
+    TextField AddValueText
+    Button ClearInventoryButton
+    Button DeleteItemButton
+    Button EditItemButton
+    TextFlow EditItemErrorBox
+    TextField EditNameText
+    TextField EditSerialNumText
+    TextField EditValueText
+    TableView<InventoryItem> InventoryList
+    Button LoadInventoryButton
+    CheckBox NameCheckbox
+    TableColumn<InventoryItem, String> NameColumn
+    Button NameSearchButton
+    Button SaveInventoryButton
+    TextField SearchTextBox
+    CheckBox SerialNumCheckbox
+    TableColumn<InventoryItem, String> SerialNumColumn
+    Button SerialSearchButton
+    CheckBox ValueCheckbox
+    TableColumn<InventoryItem, String> ValueColumn
+    method addItem()
+    method clearInventory()
+    method deleteItem()
+    method editItem()
+    method loadInventory()
+    method saveInventory()
+    method searchByName()
+    method searchBySerialNum()
+    method sortByNameCheckbox()
+    method sortBySerialNumCheckbox()
+    method sortByValueCheckbox()
+}
+
+class InventoryItem{
+    String itemName
+    String itemSerialNum
+    String itemValue
+    method getItemName()
+    method getItemValue()
+    method getItemSerialNum()
+    method setItemName()
+    method setItemValue()
+    method setItemSerialNum()
+}
+
+class InventoryList{
+    ArrayList inventoryList
+}
+
+InventoryItem <|- InventoryList
+
+@enduml

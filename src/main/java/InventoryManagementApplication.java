@@ -21,7 +21,7 @@ public class InventoryManagementApplication extends Application {
     }
 
     public static void main(String[] args) {
-        // create a TodoList object and call its start method
+        // create a InventoryList object and call its start method
         launch(args);
     }
 }
