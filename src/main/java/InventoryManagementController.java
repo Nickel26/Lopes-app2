@@ -17,6 +17,8 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
 import java.net.URL;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.ResourceBundle;
 
 public class InventoryManagementController implements Initializable {
@@ -245,17 +247,64 @@ public class InventoryManagementController implements Initializable {
 
         @FXML
         void sortByNameCheckbox(ActionEvent event) {
-            //Sorts list by name alphabetically
+                InventoryList nameSortedList = new InventoryList();
+                nameSortedList = invList;
+                ObservableList<InventoryItem> nameSort = FXCollections.observableArrayList();
+                nameSort = List;
+                System.out.printf("in sort by name");
+
+
+                //sorts list by name alphabetically
+                if(NameCheckbox.isSelected()){
+
+                        SerialNumCheckbox.setSelected(false);
+                        ValueCheckbox.setSelected(false);
+
+                        nameSortedList = nameSortedList.nameSort(nameSortedList);
+                        for(int i = 0; i < nameSortedList.itemList.size(); i++){
+                                nameSort.add(nameSortedList.itemList.get(i));
+                        }
+                        Table.setItems(nameSort);
+                }
+
+                else{
+                        Table.setItems(List);
+                }
         }
 
         @FXML
         void sortBySerialNumCheckbox(ActionEvent event) {
-            //Sorts list by serial number alphanumerical
+                InventoryList serialNumSortedList = new InventoryList();
+                ObservableList<InventoryItem> serialNumSort = FXCollections.observableArrayList();
+                serialNumSort = List;
+
+                //Sorts list by serial number alphanumerical
+                if(SerialNumCheckbox.isSelected()){
+
+                        NameCheckbox.setSelected(false);
+                        ValueCheckbox.setSelected(false);
+
+                        serialNumSortedList = serialNumSortedList.serialNumSort(serialNumSortedList);
+
+                }
         }
 
         @FXML
         void sortByValueCheckbox(ActionEvent event) {
-            //sorts by value from least to greatest
+                InventoryList valueSortedList = new InventoryList();
+                ObservableList<InventoryItem> valueSort = FXCollections.observableArrayList();
+                valueSort = List;
+
+                //sorts by value from least to greatest
+                if(ValueCheckbox.isSelected()){
+
+                        SerialNumCheckbox.setSelected(false);
+                        NameCheckbox.setSelected(false);
+
+                        valueSortedList = valueSortedList.valueSort(valueSortedList);
+
+
+                }
         }
 
         @Override

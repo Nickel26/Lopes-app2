@@ -2,7 +2,7 @@
  *  UCF COP3330 Fall 2021 Application Assignment 2 Solution
  *  Copyright 2021 Nicholas Lopes
  */
-import java.util.ArrayList;
+import java.util.*;
 
 public class InventoryList {
     ArrayList<InventoryItem> itemList = new ArrayList<>();
@@ -142,6 +142,26 @@ public class InventoryList {
     void clearList(){
         //clear entire list
         this.itemList.clear();
+    }
+
+    InventoryList nameSort(InventoryList list){
+        InventoryList temp = new InventoryList();
+
+        
+
+        return temp;
+    }
+
+    InventoryList serialNumSort(InventoryList list){
+        InventoryList temp = new InventoryList();
+
+        return null;
+    }
+
+    InventoryList valueSort(InventoryList list){
+        InventoryList temp = new InventoryList();
+
+        return null;
     }
 
     protected void  saveList(){
