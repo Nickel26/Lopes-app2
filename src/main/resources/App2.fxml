@@ -26,7 +26,7 @@
                               <Font size="25.0" />
                            </font>
                         </Label>
-                        <TableView fx:id="InventoryList" layoutY="29.0" prefHeight="301.0" prefWidth="677.0">
+                        <TableView fx:id="Table" layoutY="29.0" prefHeight="301.0" prefWidth="677.0">
                           <columns>
                             <TableColumn fx:id="SerialNumColumn" prefWidth="268.0" text="Serial Number" />
                             <TableColumn fx:id="NameColumn" minWidth="0.0" prefWidth="284.0" text="Name" />
